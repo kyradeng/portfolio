@@ -18,15 +18,21 @@ nav li {
 }
 
 nav a {
-    /* Style navigation links */
-    text-decoration: none; /* Remove underline */
-    color: #000; /* Default link color */
-    padding: 0.5rem 1rem; /* Add spacing */
-    display: inline-block; /* Ensure links behave like blocks for padding to apply */
+  text-decoration: none; /* Remove underline */
+  color: #000; /* Default link color */
+  padding: 0.5rem 1rem; /* Add spacing around links */
+  text-align: center; /* Center the text inside the flex item */
+  flex: 1; /* Make all links take up equal space */
 }
 
+/* Current page link styling */
+nav a.current {
+  font-weight: bold; /* Highlight the current page */
+  color: #007BFF; /* Different color for the current page link */
+}
+
+/* Hover effect for links */
 nav a:hover {
-    /* Add hover effect */
-    color: #007BFF; /* Change color on hover */
-    text-decoration: underline; /* Optionally add underline on hover */
+  color: #0056b3; /* Darker blue on hover */
+  text-decoration: underline; /* Add underline for hover */
 }
