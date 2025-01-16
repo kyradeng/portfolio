@@ -11,6 +11,16 @@ body {
     padding: 0 2rem;
   }
 
+  nav {
+    display: flex; /* Enable Flexbox layout */
+    justify-content: space-around; /* Distribute links evenly */
+    align-items: center; /* Align items vertically */
+    background-color: #f8f9fa; /* Light background color */
+    padding: 0.5rem 1rem; /* Add spacing inside navigation bar */
+    margin-bottom: 1rem; /* Separate navigation from the content below */
+    border-bottom: 1px solid oklch(80% 3% 200); /* Subtle gray border */
+}
+
   nav ul,
 nav li {
     /* Remove default box styling of <ul> and <li> */
@@ -19,20 +29,22 @@ nav li {
 
 nav a {
   text-decoration: none; /* Remove underline */
-  color: #000; /* Default link color */
-  padding: 0.5rem 1rem; /* Add spacing around links */
-  text-align: center; /* Center the text inside the flex item */
-  flex: 1; /* Make all links take up equal space */
-}
-
-/* Current page link styling */
-nav a.current {
-  font-weight: bold; /* Highlight the current page */
-  color: #007BFF; /* Different color for the current page link */
+  color: inherit; /* Use parent element's color */
+  padding: 0.5em; /* Add spacing around links */
+  text-align: center; /* Center text in links */
+  flex: 1; /* Make links take up equal space */
 }
 
 /* Hover effect for links */
 nav a:hover {
   color: #0056b3; /* Darker blue on hover */
-  text-decoration: underline; /* Add underline for hover */
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/* Current page link styling */
+nav a.current {
+  font-weight: bold; /* Highlight the current page link */
+  color: #007BFF; /* Unique color for current page */
+  border-bottom: 0.4em solid oklch(90% 3% 200); /* Thick bottom border */
+  padding-bottom: calc(0.5em - 0.4em); /* Adjust padding to maintain height */
 }
