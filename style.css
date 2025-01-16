@@ -1,24 +1,23 @@
+:root {
+  --color-accent: oklch(65% 50% 0); /* Define the accent color */
+}
+
 body {
-    /* Set line height to 1.5 times the font size
-         and use the OS’s UI font as the website font
-       */
-    font: 100%/1.5 system-ui;
+  font: 100%/1.5 system-ui; /* Set font style and line height */
+  max-width: 100ch; /* Maximum width for readability */
+  margin-inline: auto; /* Center content horizontally */
+  padding: 0 2rem; /* Add padding to prevent content from touching the edges */
+  accent-color: var(--color-accent); /* Inherit accent color */
+}
 
-    max-width: 100ch;
-
-    margin-inline: auto;
-
-    padding: 0 2rem;
-  }
-
-  nav {
-    display: flex; /* Enable Flexbox layout */
-    justify-content: space-around; /* Distribute links evenly */
-    align-items: center; /* Align items vertically */
-    background-color: #f8f9fa; /* Light background color */
-    padding: 0.5rem 1rem; /* Add spacing inside navigation bar */
-    margin-bottom: 1rem; /* Separate navigation from the content below */
-    border-bottom: 1px solid oklch(80% 3% 200); /* Subtle gray border */
+nav {
+  display: flex; /* Enable Flexbox layout */
+  justify-content: space-around; /* Distribute links evenly */
+  align-items: center; /* Align items vertically */
+  background-color: #f8f9fa; /* Light background color */
+  padding: 0.5rem 1rem; /* Add spacing inside navigation bar */
+  margin-bottom: 1rem; /* Separate navigation from the content below */
+  border-bottom: 1px solid oklch(80% 3% 200); /* Subtle gray border */
 }
 
   nav ul,
@@ -33,18 +32,22 @@ nav a {
   padding: 0.5em; /* Add spacing around links */
   text-align: center; /* Center text in links */
   flex: 1; /* Make links take up equal space */
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
 }
 
 /* Hover effect for links */
 nav a:hover {
-  color: #0056b3; /* Darker blue on hover */
-  text-decoration: underline; /* Add underline on hover */
+  color: var(--color-accent); /* Change text color to accent color */
+  background-color: oklch(95% 5% 0); /* Light background color with the same hue */
+  border-bottom: 0.4em solid var(--color-accent); /* Thick accent color bottom border */
+  border-radius: 0.2em; /* Slight rounding for hover effect */
+  text-decoration: none; /* No underline on hover */
 }
 
 /* Current page link styling */
 nav a.current {
   font-weight: bold; /* Highlight the current page link */
-  color: #007BFF; /* Unique color for current page */
-  border-bottom: 0.4em solid oklch(90% 3% 200); /* Thick bottom border */
+  color: var(--color-accent); /* Use accent color */
+  border-bottom: 0.4em solid var(--color-accent); /* Thick bottom border */
   padding-bottom: calc(0.5em - 0.4em); /* Adjust padding to maintain height */
 }
