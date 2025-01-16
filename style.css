@@ -10,3 +10,23 @@ body {
 
     padding: 0 2rem;
   }
+
+  nav ul,
+nav li {
+    /* Remove default box styling of <ul> and <li> */
+    display: contents;
+}
+
+nav a {
+    /* Style navigation links */
+    text-decoration: none; /* Remove underline */
+    color: #000; /* Default link color */
+    padding: 0.5rem 1rem; /* Add spacing */
+    display: inline-block; /* Ensure links behave like blocks for padding to apply */
+}
+
+nav a:hover {
+    /* Add hover effect */
+    color: #007BFF; /* Change color on hover */
+    text-decoration: underline; /* Optionally add underline on hover */
+}
