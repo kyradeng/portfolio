@@ -111,7 +111,8 @@ form button:hover {
 
 .projects article {
   display: grid; /* Make each project article a grid container */
-  grid-template-rows: subgrid; /* Use subgrid for row alignment */
+  grid-template-columns: 1fr 2fr; /* Text and image columns */
+  gap: 1rem; /* Space between text and image */
   background-color: #f9f9f9; /* Light background color for each project */
   padding: 1rem; /* Padding inside each project */
   border-radius: 0.5rem; /* Rounded corners for the projects */
@@ -146,6 +147,13 @@ h6 {
 
 .projects {
   gap: 1em; /* Adjust spacing between articles */
+}
+
+/* Adjust the image behavior on smaller screens */
+@media (max-width: 768px) {
+  .projects article {
+    grid-template-columns: 1fr; /* Stack text and image on small screens */
+  }
 }
 
 header {
