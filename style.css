@@ -66,12 +66,12 @@ form label {
 form input[type="email"],
 form input[type="text"],
 form textarea {
-  display: block; /* Forces input fields to behave like block elements */
-  width: 100%; /* Occupies the full width of the container */
-  box-sizing: border-box; /* Includes padding and border in the width */
-  margin-block: 0.5em; /* Adds spacing above and below inputs */
-  padding: 0.5em; /* Adds inner spacing within the input fields */
-  font: inherit; /* Ensures consistency with the page font */
+  display: block; /* Forces form controls to be block elements */
+  width: 100%; /* Full width of their container */
+  box-sizing: border-box; /* Includes padding and border in width calculation */
+  margin-block: 0.5em; /* Adds spacing around elements */
+  padding: 0.5em; /* Adds padding to form controls */
+  font: inherit; /* Ensures consistency with page font */
 }
 
 form textarea {
