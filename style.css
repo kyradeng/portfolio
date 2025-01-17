@@ -53,14 +53,19 @@ nav a.current {
 }
 
 form {
+  display: grid; /* Enable grid layout */
+  grid-template-columns: auto 1fr; /* Two columns: label width and input width */
+  gap: 1em; /* Add spacing between grid items */
   max-width: 600px;
   margin: 0 auto;
 }
 
 form label {
-  display: block; /* Makes labels block-level elements */
+  display: grid; /* Make the label a grid container */
+  grid-template-columns: subgrid; /* Use the form's grid for the label */
   margin-block: 0.5em; /* Adds spacing above and below labels */
   font-weight: bold;
+  grid-column: 1 / -1; /* Make label span across both columns */
 }
 
 form input[type="email"],
@@ -90,6 +95,7 @@ form button {
   border: none;
   border-radius: 0.3em;
   cursor: pointer;
+  grid-column: 1 / -1;
 }
 
 form button:hover {
