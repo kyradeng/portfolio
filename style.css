@@ -8,6 +8,7 @@ body {
   margin-inline: auto; /* Center content horizontally */
   padding: 0 2rem; /* Add padding to prevent content from touching the edges */
   accent-color: var(--color-accent); /* Inherit accent color */
+  background-color: #f9f9f9;
 }
 
 nav {
@@ -145,4 +146,121 @@ h6 {
 
 .projects {
   gap: 1em; /* Adjust spacing between articles */
+}
+
+header {
+  text-align: center;
+  background-color: var(--color-accent); /* Accent color background */
+  color: white;
+  padding: 2rem 0; /* Padding for spacing */
+}
+
+header h1 {
+  font-size: 2.5rem; /* Large title font */
+  margin: 0; /* Remove default margin */
+}
+
+header p {
+  font-size: 1.2rem; /* Smaller subtitle font */
+  margin-top: 0.5rem; /* Space between name and subtitle */
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+section {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for visual separation */
+  border-radius: 8px; /* Rounded corners */
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-accent); /* Accent color for section titles */
+}
+
+article {
+  margin-bottom: 1.5rem; /* Space between each article */
+}
+
+article header h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+article p {
+  font-size: 1rem;
+  color: #333; /* Standard text color */
+}
+
+article ul {
+  list-style-type: square;
+  padding-left: 1.5rem;
+}
+
+article li {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+#skills ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0;
+}
+
+#skills li {
+  background-color: var(--color-accent); /* Accent color for skill tags */
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px; /* Rounded skill tags */
+  font-size: 1rem;
+}
+
+#skills li:hover {
+  background-color: oklch(95% 5% 5%); /* Slight hover effect for skills */
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.5rem; /* Adjust header size */
+  }
+
+  section {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  article h3 {
+    font-size: 1.1rem;
+  }
+
+  #skills ul {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2rem; /* Even smaller on smaller screens */
+  }
+
+  article li {
+    font-size: 0.9rem; /* Smaller text for mobile */
+  }
 }
