@@ -107,3 +107,25 @@ form button:hover {
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); /* Create flexible columns */
   gap: 1.5em; /* Adds spacing between grid items */
 }
+.projects article {
+  background-color: #f9f9f9; /* Light background color for each project */
+  padding: 1rem; /* Padding inside each project */
+  border-radius: 0.5rem; /* Rounded corners for the projects */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.projects img {
+  max-width: 100%; /* Ensure images are responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 0.5rem; /* Rounded corners for images */
+}
+
+.projects h2 {
+  font-size: 1.25rem; /* Slightly larger font for project titles */
+  margin-top: 1rem; /* Add space above the title */
+}
+
+.projects p {
+  font-size: 1rem; /* Standard font size for descriptions */
+  margin-top: 0.5rem; /* Add space above the paragraph */
+}
