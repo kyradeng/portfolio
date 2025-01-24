@@ -7,15 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="../portfolio/projects/index.html">Projects</a></li>
-            <li><a href="../portfolio/contact/index.html">Contact</a></li>
-            <li><a href="../portfolio/resume/index.html">Resume</a></li>
-            <li><a href="https://github.com/kyradeng" target="_blank">GitHub</a></li>
-        </ul>
-    </nav>
     <h1>Kyra Deng</h1>
     <p>Hi my name is Kyra, and I am a third year Data Science student here at UCSD!</p>
     <img src="images/kyrapic.HEIC" alt="Picture of Kyra outdoors in Korea" width="300">
@@ -35,6 +26,8 @@
 
         // Step 3.3: Create the navigation menu dynamically
         let nav = document.createElement('nav');
+        let ul = document.createElement('ul'); // Create an unordered list to hold the links
+        nav.appendChild(ul);  // Append the ul to the nav
         document.body.prepend(nav);  // Add nav at the beginning of the body
 
         // Step 3.4: Iterate through pages and create links
@@ -58,8 +51,10 @@
                 a.target = '_blank';  // Open external links in a new tab
             }
 
-            // Step 3.9: Append the link to the navigation
-            nav.append(a);
+            // Step 3.9: Create the list item and append the link
+            let li = document.createElement('li');
+            li.appendChild(a);
+            ul.appendChild(li);  // Append the list item to the unordered list
         }
     </script>
 
