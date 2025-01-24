@@ -9,7 +9,7 @@
 <body>
     <nav>
         <ul>
-            <li><a href="./index.html" class="current">Home</a></li>
+            <li><a href="./index.html">Home</a></li>
             <li><a href="../portfolio/projects/index.html">Projects</a></li>
             <li><a href="../portfolio/contact/index.html">Contact</a></li>
             <li><a href="../portfolio/resume/index.html">Resume</a></li>
@@ -19,6 +19,21 @@
     <h1>Kyra Deng</h1>
     <p>Hi my name is Kyra, and I am a third year Data Science student here at UCSD!</p>
     <img src="images/kyrapic.HEIC" alt="Picture of Kyra outdoors in Korea" width="300">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Select all navigation links inside the <nav> element
+            const navLinks = document.querySelectorAll("nav a");
+
+            // Find the link that matches the current page's host and pathname
+            const currentLink = Array.from(navLinks).find(
+                (a) => a.host === location.host && a.pathname === location.pathname
+            );
+
+            // Safely add the 'current' class if currentLink exists
+            currentLink?.classList.add('current');
+        });
+    </script>
 
 </body>
 </html>
