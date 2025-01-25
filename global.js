@@ -13,39 +13,43 @@ const pages = [
 ];
 
 // Step 3.2: Check if we're on the home page
-const ARE_WE_HOME = document.documentElement.classList.contains('home');
+const ARE_WE_HOME = location.pathname === '/portfolio/';
 
 // Step 3.3: Create the navigation menu dynamically
-let nav = document.createElement('nav');
-let ul = document.createElement('ul'); // Create an unordered list to hold the links
-nav.appendChild(ul);  // Append the ul to the nav
-document.body.prepend(nav);  // Add nav at the beginning of the body
+if (!document.querySelector('nav')) {
+    let nav = document.createElement('nav');
+    let ul = document.createElement('ul'); // Create an unordered list to hold the links
+    nav.appendChild(ul);  // Append the ul to the nav
+    document.body.prepend(nav);  // Add nav at the beginning of the body
 
-// Step 3.4: Iterate through pages and create links
-for (let p of pages) {
-    let url = p.url;
-    let title = p.title;
+    // Step 3.4: Iterate through pages and create links
+    for (let p of pages) {
+        let url = p.url;
+        let title = p.title;
 
-    // Step 3.5: Adjust the URL if we're not on the home page
-    url = !ARE_WE_HOME && !url.startsWith('http') ? '../' + url : url;
+        // Step 3.5: Adjust the URL if we're not on the home page
+        url = !ARE_WE_HOME && !url.startsWith('http') ? new URL(url, location.origin).pathname : url;
 
-    // Step 3.6: Create the link element
-    let a = document.createElement('a');
-    a.href = url;
-    a.textContent = title;
+        console.log(`Generating link for ${title}: ${url}`); // Debugging statement
 
-    // Step 3.7: Add current class to the current page link
-    a.classList.toggle('current', a.host === location.host && a.pathname === location.pathname);
+        // Step 3.6: Create the link element
+        let a = document.createElement('a');
+        a.href = url;
+        a.textContent = title;
 
-    // Step 3.8: Open external links (e.g., GitHub) in a new tab
-    if (a.host !== location.host) {
-        a.target = '_blank';  // Open external links in a new tab
+        // Step 3.7: Add current class to the current page link
+        a.classList.toggle('current', a.host === location.host && a.pathname === location.pathname);
+
+        // Step 3.8: Open external links (e.g., GitHub) in a new tab
+        if (a.host !== location.host) {
+            a.target = '_blank';  // Open external links in a new tab
+        }
+
+        // Step 3.9: Create the list item and append the link
+        let li = document.createElement('li');
+        li.appendChild(a);
+        ul.appendChild(li);  // Append the list item to the unordered list
     }
-
-    // Step 3.9: Create the list item and append the link
-    let li = document.createElement('li');
-    li.appendChild(a);
-    ul.appendChild(li);  // Append the list item to the unordered list
 }
 
 document.body.insertAdjacentHTML(
@@ -71,12 +75,15 @@ select.addEventListener('input', function (event) {
 
   // Save the user's preference to localStorage
   localStorage.colorScheme = event.target.value;
+
+  console.log(`Color scheme updated to: ${event.target.value}`); // Debugging statement
 });
 
 // Function to set the color scheme from localStorage or default
 function setColorScheme(colorScheme) {
   document.documentElement.style.setProperty('color-scheme', colorScheme);
   select.value = colorScheme;  // Update the select element
+  console.log(`Setting color scheme: ${colorScheme}`); // Debugging statement
 }
 
 // Check if there's a saved color scheme in localStorage or use 'light dark' by default
