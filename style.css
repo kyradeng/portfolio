@@ -244,6 +244,22 @@ article li {
   background-color: oklch(95% 5% 5%); /* Slight hover effect for skills */
 }
 
+/* Position the theme switcher at the top right corner */
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%; /* Make the font size smaller */
+  font-family: inherit; /* Ensure font consistency */
+}
+
+/* Style the select element */
+select {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+
 @media (max-width: 768px) {
   header h1 {
     font-size: 2.5rem; /* Adjust header size */
@@ -270,5 +286,41 @@ article li {
 
   article li {
     font-size: 0.9rem; /* Smaller text for mobile */
+  }
+}
+
+html {
+  color-scheme: light dark;
+}
+
+/* Specific styles for dark mode (you can use this for specific tweaks) */
+@media (prefers-color-scheme: dark) {
+  /* General Dark Mode Background and Text */
+  body {
+      background-color: #121212; /* Dark background */
+      color: white; /* Light text */
+  }
+
+  nav {
+      background-color: #333; /* Dark nav background */
+      border-bottom: 2px solid oklch(50% 10% 200 / 40%);
+  }
+
+  nav a {
+      color: #bb86fc; /* Light purple link color in dark mode */
+  }
+
+  nav a:hover {
+      background-color: color-mix(in oklch, var(--color-accent, oklch(40% 30% 200)), canvas 85%);
+      color: white; /* Ensures legible text on hover */
+  }
+
+  header {
+      background-color: #1e1e1e; /* Darker header background */
+  }
+
+  section {
+      background-color: #181818; /* Darker section background */
+      border-radius: 8px;
   }
 }

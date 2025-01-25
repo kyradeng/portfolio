@@ -71,48 +71,6 @@
             </article>
         </div>
 
-
-        <script>
-            // Step 3.1: Define pages
-            const pages = [
-                { url: '', title: 'Home' },
-                { url: 'projects/', title: 'Projects' },
-                { url: 'contact/', title: 'Contact' },
-                { url: 'resume/', title: 'Resume' },
-                { url: 'https://github.com/kyradeng', title: 'GitHub' },
-            ];
-    
-            // Step 3.2: Check if we're on the home page
-            const ARE_WE_HOME = document.documentElement.classList.contains('home');
-    
-            // Step 3.3: Create the navigation menu dynamically
-            let nav = document.createElement('nav');
-            document.body.prepend(nav);  // Add nav at the beginning of the body
-    
-            // Step 3.4: Iterate through pages and create links
-            for (let p of pages) {
-                let url = p.url;
-                let title = p.title;
-    
-                // Step 3.5: Adjust the URL if we're not on the home page
-                url = !ARE_WE_HOME && !url.startsWith('http') ? '../' + url : url;
-    
-                // Step 3.6: Create the link element
-                let a = document.createElement('a');
-                a.href = url;
-                a.textContent = title;
-    
-                // Step 3.7: Add current class to the current page link
-                a.classList.toggle('current', a.host === location.host && a.pathname === location.pathname);
-    
-                // Step 3.8: Open external links (e.g., GitHub) in a new tab
-                if (a.host !== location.host) {
-                    a.target = '_blank';  // Open external links in a new tab
-                }
-    
-                // Step 3.9: Append the link to the navigation
-                nav.append(a);
-            }
-        </script>
+        <script type="module" src="../global.js"></script>
 </body>    
 </html>
