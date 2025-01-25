@@ -70,26 +70,37 @@ document.body.insertAdjacentHTML(
   `
 );
 
+// Get the theme select element
 const select = document.querySelector('.color-scheme select');
 
-// Event listener to update the color scheme when the user selects an option
-select.addEventListener('input', function (event) {
-  // Set the color-scheme property on the <html> element
-  document.documentElement.style.setProperty('color-scheme', event.target.value);
+function getSystemColorScheme() {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
 
-  // Save the user's preference to localStorage
-  localStorage.colorScheme = event.target.value;
-
-  console.log(`Color scheme updated to: ${event.target.value}`); // Debugging statement
-});
-
-// Function to set the color scheme from localStorage or default
+// Function to set the color scheme
 function setColorScheme(colorScheme) {
-  document.documentElement.style.setProperty('color-scheme', colorScheme);
-  select.value = colorScheme;  // Update the select element
-  console.log(`Setting color scheme: ${colorScheme}`); // Debugging statement
+if (colorScheme === 'light dark') {
+    // Automatically detect system theme
+    colorScheme = getSystemColorScheme();
+    }
+
+  document.documentElement.setAttribute('data-color-scheme', colorScheme);
+  select.value = colorScheme;
+  localStorage.setItem('colorScheme', colorScheme);
+  console.log(`Setting color scheme: ${colorScheme}`);
 }
 
-// Check if there's a saved color scheme in localStorage or use 'light dark' by default
-const savedScheme = localStorage.colorScheme || 'light dark';
+// Load the saved theme or default to 'light dark'
+const savedScheme = localStorage.getItem('colorScheme') || 'light dark';
 setColorScheme(savedScheme);
+
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
+    if (localStorage.getItem('colorScheme') === 'light dark') {
+      setColorScheme('light dark'); // Re-evaluate system preference
+    }
+  });
+
+// Event listener for the theme dropdown
+select.addEventListener('input', function (event) {
+  setColorScheme(event.target.value);
+});

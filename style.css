@@ -1,97 +1,129 @@
+/* Default Light Mode Variables */
 :root {
-  --color-accent: oklch(65% 50% 0); /* Define the accent color */
+  --color-bg: #f9f9f9;
+  --color-text: #000;
+  --color-nav-bg: #f8f9fa;
+  --color-nav-border: oklch(80% 3% 200);
+  --color-link: inherit;
+  --color-link-hover: var(--color-accent);
+  --color-link-hover-bg: oklch(95% 5% 0);
+  --color-header-bg: var(--color-accent);
+  --color-section-bg: white;
+  --color-section-shadow: rgba(0, 0, 0, 0.1);
+  --color-skill-bg: var(--color-accent);
+  --color-nav-hover-bg: color-mix(in oklch, var(--color-accent, oklch(40% 30% 200)), canvas 85%);
+  --color-button-bg: var(--color-accent);
+  --color-button-hover-bg: oklch(from var(--color-accent) 95% 5% h);
 }
 
+/* Dark Mode Variables */
+[data-color-scheme="dark"] {
+  --color-bg: #121212;
+  --color-text: white;
+  --color-nav-bg: #333;
+  --color-nav-border: oklch(50% 10% 200 / 40%);
+  --color-link: #bb86fc;
+  --color-link-hover: white;
+  --color-link-hover-bg: color-mix(in oklch, var(--color-accent, oklch(40% 30% 200)), canvas 85%);
+  --color-header-bg: #1e1e1e;
+  --color-section-bg: #181818;
+  --color-section-shadow: rgba(255, 255, 255, 0.1);
+  --color-skill-bg: var(--color-accent);
+  --color-button-bg: var(--color-accent);
+  --color-button-hover-bg: oklch(from var(--color-accent) 95% 5% h);
+}
+
+/* General Styling */
 body {
-  font: 100%/1.5 system-ui; /* Set font style and line height */
-  max-width: 100ch; /* Maximum width for readability */
-  margin-inline: auto; /* Center content horizontally */
-  padding: 0 2rem; /* Add padding to prevent content from touching the edges */
-  accent-color: var(--color-accent); /* Inherit accent color */
-  background-color: #f9f9f9;
+  font: 100%/1.5 system-ui;
+  max-width: 100ch;
+  margin-inline: auto;
+  padding: 0 2rem;
+  accent-color: var(--color-accent);
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
+/* Navigation */
 nav {
-  display: flex; /* Enable Flexbox layout */
-  justify-content: space-around; /* Distribute links evenly */
-  align-items: center; /* Align items vertically */
-  background-color: #f8f9fa; /* Light background color */
-  padding: 0.5rem 1rem; /* Add spacing inside navigation bar */
-  margin-bottom: 1rem; /* Separate navigation from the content below */
-  border-bottom: 1px solid oklch(80% 3% 200); /* Subtle gray border */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--color-nav-bg);
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--color-nav-border);
 }
 
-  nav ul,
+nav ul,
 nav li {
-    /* Remove default box styling of <ul> and <li> */
-    display: contents;
+  display: contents;
 }
 
 nav a {
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Use parent element's color */
-  padding: 0.5em; /* Add spacing around links */
-  text-align: center; /* Center text in links */
-  flex: 1; /* Make links take up equal space */
-  transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+  text-decoration: none;
+  color: var(--color-link);
+  padding: 0.5em;
+  text-align: center;
+  flex: 1;
+  transition: all 0.3s ease-in-out;
 }
 
-/* Hover effect for links */
 nav a:hover {
-  color: var(--color-accent); /* Change text color to accent color */
-  background-color: oklch(95% 5% 0); /* Light background color with the same hue */
-  border-bottom: 0.4em solid var(--color-accent); /* Thick accent color bottom border */
-  border-radius: 0.2em; /* Slight rounding for hover effect */
-  text-decoration: none; /* No underline on hover */
+  color: var(--color-link-hover);
+  background-color: var(--color-link-hover-bg);
+  border-bottom: 0.4em solid var(--color-accent);
+  border-radius: 0.2em;
+  text-decoration: none;
 }
 
-/* Current page link styling */
 nav a.current {
-  font-weight: bold; /* Highlight the current page link */
-  color: var(--color-accent); /* Use accent color */
-  border-bottom: 0.4em solid var(--color-accent); /* Thick bottom border */
-  padding-bottom: calc(0.5em - 0.4em); /* Adjust padding to maintain height */
+  font-weight: bold;
+  color: var(--color-accent);
+  border-bottom: 0.4em solid var(--color-accent);
+  padding-bottom: calc(0.5em - 0.4em);
 }
 
+/* Forms */
 form {
-  display: grid; /* Enable grid layout */
-  grid-template-columns: auto 1fr; /* Two columns: label width and input width */
-  gap: 1em; /* Add spacing between grid items */
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
   max-width: 600px;
   margin: 0 auto;
 }
 
 form label {
-  display: grid; /* Make the label a grid container */
-  grid-template-columns: subgrid; /* Use the form's grid for the label */
-  margin-block: 0.5em; /* Adds spacing above and below labels */
+  display: grid;
+  grid-template-columns: subgrid;
+  margin-block: 0.5em;
   font-weight: bold;
-  grid-column: 1 / -1; /* Make label span across both columns */
+  grid-column: 1 / -1;
 }
 
 form input[type="email"],
 form input[type="text"],
 form textarea {
-  display: block; /* Forces form controls to be block elements */
-  width: 100%; /* Full width of their container */
-  box-sizing: border-box; /* Includes padding and border in width calculation */
-  margin-block: 0.5em; /* Adds spacing around elements */
-  padding: 0.5em; /* Adds padding to form controls */
-  font: inherit; /* Ensures consistency with page font */
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-block: 0.5em;
+  padding: 0.5em;
+  font: inherit;
 }
 
 form textarea {
-  resize: vertical; /* Allows vertical resizing only */
+  resize: vertical;
 }
 
 form button {
   display: block;
-  width: 100%; /* Button spans the full width of the form */
+  width: 100%;
   box-sizing: border-box;
   margin-block: 0.5em;
   padding: 0.75em;
   font: inherit;
-  background-color: var(--color-accent);
+  background-color: var(--color-button-bg);
   color: #fff;
   border: none;
   border-radius: 0.3em;
@@ -100,77 +132,53 @@ form button {
 }
 
 form button:hover {
-  background-color: oklch(from var(--color-accent) 95% 5% h);
+  background-color: var(--color-button-hover-bg);
 }
 
+/* Projects */
 .projects {
-  display: grid; /* Make the projects section a grid container */
-  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); /* Create flexible columns */
-  gap: 1.5em; /* Adds spacing between grid items */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 1.5em;
 }
 
 .projects article {
-  display: grid; /* Make each project article a grid container */
-  grid-template-columns: 1fr 2fr; /* Text and image columns */
-  gap: 1rem; /* Space between text and image */
-  background-color: #f9f9f9; /* Light background color for each project */
-  padding: 1rem; /* Padding inside each project */
-  border-radius: 0.5rem; /* Rounded corners for the projects */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+  background-color: var(--color-section-bg);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px var(--color-section-shadow);
 }
 
 .projects article h2 {
-  margin: 0; /* Remove default margin on <h2> */
-  font-size: 1.25rem; /* Slightly larger font for project titles */
+  margin: 0;
+  font-size: 1.25rem;
 }
 
 .projects article img {
-  max-width: 100%; /* Ensure images are responsive */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 0.5rem; /* Rounded corners for images */
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
 }
 
-.projects article p {
-  font-size: 1rem; /* Standard font size for descriptions */
-  margin-top: 0.5rem; /* Add space above the paragraph */
-}
-
-/* General heading styles */
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: 1.1; /* Tighter line-height for headings */
-  text-wrap: balance; /* Prevent uneven lines for all headings */
-}
-
-.projects {
-  gap: 1em; /* Adjust spacing between articles */
-}
-
-/* Adjust the image behavior on smaller screens */
-@media (max-width: 768px) {
-  .projects article {
-    grid-template-columns: 1fr; /* Stack text and image on small screens */
-  }
-}
-
+/* Headers */
 header {
   text-align: center;
-  background-color: var(--color-accent); /* Accent color background */
+  background-color: var(--color-header-bg);
   color: white;
-  padding: 2rem 0; /* Padding for spacing */
+  padding: 2rem 0;
 }
 
 header h1 {
-  font-size: 2.5rem; /* Large title font */
-  margin: 0; /* Remove default margin */
+  font-size: 2.5rem;
+  margin: 0;
 }
 
 header p {
-  font-size: 1.2rem; /* Smaller subtitle font */
-  margin-top: 0.5rem; /* Space between name and subtitle */
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
 }
 
 header a {
@@ -184,46 +192,23 @@ header a:hover {
   text-decoration: underline;
 }
 
+/* Sections */
 section {
   max-width: 900px;
   margin: 2rem auto;
   padding: 1rem;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for visual separation */
-  border-radius: 8px; /* Rounded corners */
+  background-color: var(--color-section-bg);
+  box-shadow: 0 4px 8px var(--color-section-shadow);
+  border-radius: 8px;
 }
 
 section h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: var(--color-accent); /* Accent color for section titles */
+  color: var(--color-accent);
 }
 
-article {
-  margin-bottom: 1.5rem; /* Space between each article */
-}
-
-article header h3 {
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-article p {
-  font-size: 1rem;
-  color: #333; /* Standard text color */
-}
-
-article ul {
-  list-style-type: square;
-  padding-left: 1.5rem;
-}
-
-article li {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
-
+/* Skills */
 #skills ul {
   list-style-type: none;
   display: flex;
@@ -233,45 +218,40 @@ article li {
 }
 
 #skills li {
-  background-color: var(--color-accent); /* Accent color for skill tags */
+  background-color: var(--color-skill-bg);
   color: white;
   padding: 0.5rem 1rem;
-  border-radius: 20px; /* Rounded skill tags */
+  border-radius: 20px;
   font-size: 1rem;
 }
 
-#skills li:hover {
-  background-color: oklch(95% 5% 5%); /* Slight hover effect for skills */
-}
-
-/* Position the theme switcher at the top right corner */
+/* Theme Switcher */
 .color-scheme {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  font-size: 80%; /* Make the font size smaller */
-  font-family: inherit; /* Ensure font consistency */
+  font-size: 80%;
+  font-family: inherit;
 }
 
-/* Style the select element */
 select {
   font-family: inherit;
   font-size: 100%;
 }
 
-
+/* Responsive Styles */
 @media (max-width: 768px) {
+  .projects article {
+    grid-template-columns: 1fr;
+  }
+
   header h1 {
-    font-size: 2.5rem; /* Adjust header size */
+    font-size: 2.5rem;
   }
 
   section {
     margin: 1rem;
     padding: 1rem;
-  }
-
-  article h3 {
-    font-size: 1.1rem;
   }
 
   #skills ul {
@@ -281,46 +261,10 @@ select {
 
 @media (max-width: 480px) {
   header h1 {
-    font-size: 2rem; /* Even smaller on smaller screens */
+    font-size: 2rem;
   }
 
   article li {
-    font-size: 0.9rem; /* Smaller text for mobile */
-  }
-}
-
-html {
-  color-scheme: light dark;
-}
-
-/* Specific styles for dark mode (you can use this for specific tweaks) */
-@media (prefers-color-scheme: dark) {
-  /* General Dark Mode Background and Text */
-  body {
-      background-color: #121212; /* Dark background */
-      color: white; /* Light text */
-  }
-
-  nav {
-      background-color: #333; /* Dark nav background */
-      border-bottom: 2px solid oklch(50% 10% 200 / 40%);
-  }
-
-  nav a {
-      color: #bb86fc; /* Light purple link color in dark mode */
-  }
-
-  nav a:hover {
-      background-color: color-mix(in oklch, var(--color-accent, oklch(40% 30% 200)), canvas 85%);
-      color: white; /* Ensures legible text on hover */
-  }
-
-  header {
-      background-color: #1e1e1e; /* Darker header background */
-  }
-
-  section {
-      background-color: #181818; /* Darker section background */
-      border-radius: 8px;
+    font-size: 0.9rem;
   }
 }
