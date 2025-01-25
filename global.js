@@ -4,6 +4,8 @@ function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
 
+const BASE_PATH = '/portfolio/'; // Define the base path for the application
+
 const pages = [
     { url: '', title: 'Home' },
     { url: 'projects/', title: 'Projects' },
@@ -13,7 +15,7 @@ const pages = [
 ];
 
 // Step 3.2: Check if we're on the home page
-const ARE_WE_HOME = location.pathname === '/portfolio/';
+const ARE_WE_HOME = location.pathname === BASE_PATH;
 
 // Step 3.3: Create the navigation menu dynamically
 if (!document.querySelector('nav')) {
@@ -27,8 +29,10 @@ if (!document.querySelector('nav')) {
         let url = p.url;
         let title = p.title;
 
-        // Step 3.5: Adjust the URL if we're not on the home page
-        url = !ARE_WE_HOME && !url.startsWith('http') ? new URL(url, location.origin).pathname : url;
+        // Step 3.5: Adjust the URL to include the base path
+        if (!url.startsWith('http')) {
+            url = ARE_WE_HOME ? `${BASE_PATH}${url}` : `${BASE_PATH}${url}`;
+        }
 
         console.log(`Generating link for ${title}: ${url}`); // Debugging statement
 
