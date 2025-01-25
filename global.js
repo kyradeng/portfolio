@@ -77,22 +77,30 @@ function getSystemColorScheme() {
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
 
+
+function applyColorScheme(colorScheme) {
+    document.documentElement.setAttribute('data-color-scheme', colorScheme);
+}
+
 // Function to set the color scheme
 function setColorScheme(colorScheme) {
-if (colorScheme === 'light dark') {
-    // Automatically detect system theme
-    colorScheme = getSystemColorScheme();
+    if (colorScheme === 'light dark') {
+      // Detect and apply the system preference
+      applyColorScheme(getSystemColorScheme());
+    } else {
+      // Apply user-selected theme (light or dark)
+      applyColorScheme(colorScheme);
     }
-
-  document.documentElement.setAttribute('data-color-scheme', colorScheme);
-  select.value = colorScheme;
-  localStorage.setItem('colorScheme', colorScheme);
-  console.log(`Setting color scheme: ${colorScheme}`);
-}
+  
+    // Save the user's preference in localStorage
+    localStorage.setItem('colorScheme', colorScheme);
+  }
 
 // Load the saved theme or default to 'light dark'
 const savedScheme = localStorage.getItem('colorScheme') || 'light dark';
 setColorScheme(savedScheme);
+
+select.value = savedScheme;
 
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
     if (localStorage.getItem('colorScheme') === 'light dark') {
