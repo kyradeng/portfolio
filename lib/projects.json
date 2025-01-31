@@ -1,62 +1,74 @@
 [
   {
-      "title": "Recipes",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "title": "Recipes Analysis",
+      "year": "2024",
+      "image": "images/recipes.HEIC",
+      "description": "Performed data analysis and data cleaning using pandas and numpy to process 83,000+ recipe data points from food.com. Trained a random forest classifier using Python Sklearn to predict the rating of a recipe from its nutritional facts with a test accuracy of 70%"
   },
   {
-      "title": "Lorem ipsum dolor",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "title": "Social Fulfillment Between UCSD and other UC Campuses",
+      "year": "2024",
+      "image": "images/UCSD.HEIC",
+      "description": "Investigated the social fulfillment of UC San Diego undergraduates relative to peers at other UC campuses by utilizing the University of California Undergraduate Experience Survey (UCUES) data, analyzing 200,000+ responses. Constructed confidence intervals by employing Pandas and NumPy for data wrangling and cleaning to compare social satisfaction, campus climate, co-curricular engagement, and time allocation between UCSD and other UC campuses. Discovered that UCSD is the UC school with least social involvement, thus less social fulfillment"
   },
   {
-      "title": "Lorem ipsum dolor",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "title": "TicTrack",
+      "year": "2024",
+      "image": "images/TicTrack.HEIC",
+      "description": "Study hours tracker."
   },
   {
-      "title": "Lorem ipsum dolor",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "title": "Lab1",
+      "year": "2025",
+      "image": "images/HTML.HEIC",
+      "description": "How web works. Practicing HTML."
   },
   {
-      "title": "Lorem ipsum dolor",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "title": "Lab2",
+      "year": "2025",
+      "image": "images/CSS.HEIC",
+      "description": "Styling with CSS. Connection CSS across multiple pages."
   },
   {
-      "title": "Lorem ipsum dolor",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "title": "Lab3",
+      "year": "2025",
+      "image": "images/JSS.HEIC",
+      "description": "Introduction to JSS."
   },
   {
-      "title": "Lorem ipsum dolor",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "title": "Lab4",
+      "year": "2025",
+      "image": "images/javascript.HEIC",
+      "description": "More Javascript."
   },
   {
-      "title": "Lorem ipsum dolor",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "title": "Chinese American Student Association",
+      "year": "2022",
+      "image": "images/CASA.HEIC",
+      "description": "Promoted club events on Instagram account of 1500+ followers, posted interactive, informational, and entertaining posts on social media pages to generate 100+ more members. Planned and executed events for members, implemented club website to provide links for members to utilize and join events"
   },
   {
-      "title": "Lorem ipsum dolor",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "title": "Union City Youth Commission",
+      "year": "2019",
+      "image": "images/UYUC.HEIC",
+      "description": "Collaborated with the city build a new youth center for teens to gather after school. Reached out to teens in the community to generate and gather their visions and wants for the youth center. Designed/organized first paint night event hosted by the youth center with 40+ teen attendees"
   },
   {
-      "title": "Lorem ipsum dolor",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "title": "University of California, San Diego Cognitive Science Department",
+      "year": "2024",
+      "image": "images/COGS.HEIC",
+      "description": "Lead class discussions to summarize weekly readings and graded quizzes/homework, sent out weekly checkup emails. Provided targeted support during office hours, helping students deepen their understanding on data mining, graph theory. Guided 13 groups through professor guided research projects involving data analysis"
   },
   {
-      "title": "Lorem ipsum dolor",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "title": "Friends of Children with Special Needs School",
+      "year": "2019",
+      "image": "images/FCSN.HEIC",
+      "description": "Worked with 30+ students of the Afterschool Program through daily activities to ensure their safety and taught coding classes. Planned and taught enrichment embroidery classes to prepare students for potential jobs at local embroidery small business. Worked at annual Music Camp + Drama Camp by assisting digital backdrops and helping children enter and exit stage. Regenerated Social Skills, Cooking Class, and Life Skills class curriculum for the upcoming year"
   },
   {
-      "title": "Lorem ipsum dolor",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "title": "create.by.K",
+      "year": "2022",
+      "image": "images/crochet.HEIC",
+      "description": "Constructed crocheted items and scrunchies to sell, sold 80+ crochet items and hair accessories. Established relationships with customers, learned the process of entrepreneurship. Created and designed social media pages and designed for marketing and business. Developed and deployed a responsive e-commerce website using React, HTML, and JavaScript to promote and sell items, enhancing user experience and driving sales"
   }
 ]
