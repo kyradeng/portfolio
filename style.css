@@ -309,6 +309,76 @@ select {
   border-bottom: none;
 }
 
+.container {
+  display: flex;
+  align-items: center; /* Aligns items vertically */
+  justify-content: center; /* Centers the content */
+  gap: 20px; /* Adds space between pie chart and legend */
+}
+
+#projects-pie-plot {
+  max-width: 20em;
+  margin-block: 2em;
+
+  overflow: visible;
+}
+
+.legend {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  background: #f8f9fa;
+  padding: 6px 12px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.legend .swatch {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 8px;
+  background: var(--color);
+  border: 1px solid #ccc;
+}
+
+.legend em {
+  font-style: normal;
+  color: #666;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+&:has(path:hover) {
+  path:not(:hover) {
+    opacity: 0.5;
+  }
+}
+
+.selected {
+  --color: oklch(60% 45% 0) !important;
+
+  &:is(path) {
+    fill: var(--color);
+  }
+}
+
+path {
+  transition: 300ms;
+}
+
 /* Responsive Design */
 @media (max-width: 400px) {
   .profile-stats {
